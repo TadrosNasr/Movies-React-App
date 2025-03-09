@@ -1,0 +1,19 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #282c34;
+  color: white;
+}
+
+.card {
+  padding: 2em;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background-color: #1a1a1a;
+} 
