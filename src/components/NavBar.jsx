@@ -11,7 +11,8 @@ const NavBar = () => {
     <Link className='nav-link' to='/movies'>Home</Link>
     <Link className='nav-link' to='/about'>About</Link>
     <Link className='nav-link' to='/favourites'>Favourites</Link>
-    <Link className='nav-link' to='/settings'>Settings</Link>
+    <Link className='nav-link' to='/signup'>SignUp</Link>
+    <Link className='nav-link' to='/profile'>Profile</Link>
     {/* <span>Counter: ${counter}</span> */}
 </div>
 </nav>

@@ -6,10 +6,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './components/Home'
 import About from './components/About'
-import Settings from './components/Settings'
 import NotFound from './components/NotFound'
 import Details from './components/Details'
 import Favourites from './components/Favourites'
+import SignUp from './components/SignUp'
+import Profile from './components/Profile'
 
 function App() {
   
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
         {path: ':id', element:<Details/>}]},
       {path: 'about', element:<About/>},
       {path: 'favourites', element:<Favourites/>},
-      {path:"settings" ,element:<Settings/>},
+      {path:"signup" ,element:<SignUp/>},
+      {path:"profile" ,element:<Profile/>},
       {path:"*" ,element:<NotFound></NotFound>}
 
     ]
