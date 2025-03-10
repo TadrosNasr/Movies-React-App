@@ -12,8 +12,8 @@ const Movies2 = () => {
 
     return (
         <>
-            <h1 className='alert bg-warning w-50 my-3 mx-auto p-3 border border-2 border-white'>All Time Best Movies</h1>
-            <div className='d-flex flex-wrap justify-content-center gap-4'>
+            <h1 className='alert bg-warning w-50 mt-5 mx-auto p-3 border border-2 text-dark border-white'>All Time Best Movies</h1>
+            <div className='d-flex flex-wrap justify-content-center gap-4 w-100'>
                 {movies.map(m => <Movie key={m.id} {...m} /> )}
             </div>
             {/* <div className='d-flex flex-wrap justify-content-center gap-4'>

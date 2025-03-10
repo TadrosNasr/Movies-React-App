@@ -31,7 +31,7 @@ const Details = () => {
 
     return (
         <div>
-            <div className='container my-5 d-flex flex-column justify-content-center col-11'>
+            <div style={{marginTop:55, height:'100vh'}} className='container my-5 '>
                 <div className=' d-flex flex-row justify-content-center align-items-center'>
                     <img className='w-25 h-25 rounded-2 border border-2 border-warning' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
                     <div className='d-flex flex-column justify-content-center align-items-center'>

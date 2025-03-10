@@ -17,7 +17,7 @@ const Favourites = () => {
         </div>
     )}
     return (
-        <div className="container">
+        <div className="container" style={{marginTop:50, marginTop:50}}>
             <h1 className="my-4 text-center text-warning">Favourite Movies</h1>
             <div className="row">
                 {favouriteMovies.map(movie => (
