@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addFavourite } from '../redux/store/slices/FavouriteSlice';
 const Movie = (props) => {
-    console.log(props);
     const imgPath = 'https://image.tmdb.org/t/p/w500/';
 
     const dispatch = useDispatch();

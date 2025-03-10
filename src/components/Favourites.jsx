@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeFavourite } from '../redux/store/slices/FavouriteSlice';
 
 const Favourites = () => {
-    const favouriteMovies = useSelector(state => state.favourites);
+    const favouriteMovies = useSelector(state => state.favourites.favourites);
     const dispatch =useDispatch();
     console.log(typeof(favouriteMovies));
     const imgPath = 'https://image.tmdb.org/t/p/w500/';

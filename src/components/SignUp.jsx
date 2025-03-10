@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { InputLabel, FormControl, Input, Paper, Button,Select,MenuItem, RadioGroup,
     FormControlLabel, Radio,Checkbox,Typography,FormHelperText} from "@mui/material";
+import { useDispatch } from "react-redux";
+import {addNewUser} from '../redux/store/slices/UserInfo';
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+    // const userInfo = useSelector((state)=> state.userInfo);
+    const dispatch = useDispatch();
+    const navigate=useNavigate()
   const [form, setForm] = useState({
     username: "",
     email: "",
@@ -13,13 +19,17 @@ const SignUp = () => {
   });
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setForm({...form, [name]: type === "checkbox" ? checked : value,});
+    // e.preventDefault();
+    // dispatch(addNewUser(form));
+    const { name, value } = e.target;
+    setForm({...form, [name]:value});
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Sign Up Data:", form);
+    dispatch(addNewUser(form))  //{type:"vzxc" , payload:form}
+    navigate("/profile");
   };
 
   return (

@@ -1,19 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
-const initialState = [];
+const initialState = {favourites:[]};
 
 const favouriteSlice = createSlice({
     name: 'favourites',
     initialState,
     reducers: {
         addFavourite: (state, action) => {
-            const isAlreadyFav = state.some(movie => movie.id === action.payload.id);
+            const isAlreadyFav = state.favourites.some(movie => movie.id === action.payload.id);
             if (!isAlreadyFav) {
-                state.push(action.payload);
+                state.favourites.push(action.payload);
                 // counter++;
             }
         },
         removeFavourite: (state, action) => {
-            return state.filter(movie => movie.id !== action.payload.id); 
+             state.favourites=state.favourites.filter(movie => movie.id !== action.payload.id); 
         }
     }
 });
