@@ -1,6 +1,6 @@
 import { Children, useState } from 'react'
 import './App.css'
-import MoviesProvider from './context/AppContext'
+// import MoviesProvider from './context/AppContext'
 import Movies2 from './components/Movies2'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
@@ -25,7 +25,6 @@ const router = createBrowserRouter([
       {path:"signup" ,element:<SignUp/>},
       {path:"profile" ,element:<Profile/>},
       {path:"*" ,element:<NotFound></NotFound>}
-
     ]
   }
 ])
@@ -35,7 +34,7 @@ const router = createBrowserRouter([
     
       {/* <MoviesProvider> */}
         <RouterProvider router={router} />
-      {/* </MoviesProvider>     */}
+      {/* </MoviesProvider>*/}
       </>
   )
 }
