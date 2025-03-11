@@ -5,7 +5,6 @@ import { removeFavourite } from '../redux/store/slices/FavouriteSlice';
 const Favourites = () => {
     const favouriteMovies = useSelector(state => state.favourites.favourites);
     const dispatch =useDispatch();
-    console.log(typeof(favouriteMovies));
     const imgPath = 'https://image.tmdb.org/t/p/w500/';
 
     if (!favouriteMovies || favouriteMovies.length === 0) {
@@ -26,7 +25,7 @@ const Favourites = () => {
                             <img src={imgPath + movie.poster_path} className="card-img-top" alt={movie.title} />
                             <div className="card-body text-center">
                                 <h5 className="card-title">{movie.title}</h5>
-                                <button className="btn btn-danger" onClick={() => dispatch(removeFavourite(movie))}>
+                                <button className="btn btn-outline-danger" onClick={() => dispatch(removeFavourite(movie))}>
                                 Remove 💔
                                 </button>
                             </div>

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-const initialState = {favourites:[]};
+const initialState = {favourites:[], counter:0};
 
 const favouriteSlice = createSlice({
     name: 'favourites',
@@ -9,11 +9,14 @@ const favouriteSlice = createSlice({
             const isAlreadyFav = state.favourites.some(movie => movie.id === action.payload.id);
             if (!isAlreadyFav) {
                 state.favourites.push(action.payload);
-                // counter++;
+                state.counter++;
             }
         },
         removeFavourite: (state, action) => {
              state.favourites=state.favourites.filter(movie => movie.id !== action.payload.id); 
+             state.counter--;
+             console.log(state.counter);
+
         }
     }
 });

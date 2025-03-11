@@ -16,16 +16,9 @@ const Profile = () => {
         e.preventDefault();
         console.log(data);
         dispatch(removeUser(data));
-        navigate("/movies")
+        navigate("/movies");
     }
-    // if (!data || data.length === 0) {
-    //     return (
-    //     <div style={{height: '100vh'}} className='d-flex flex-column justify-content-center align-items-center'>
-    //         <img className='w-25 my-3' src='public/error.png'/>
-    //        <h1>No User Found!</h1>
-    //        <Button variant="contained" color="warning" onClick={SignUpNavigation()}>Sign Up</Button>
-    //     </div>
-    // )}
+   
     return (
         <div className='my-5' style={{height: '100vh'}}>
             <Paper elevation={3} className="p-4 w-50 mx-auto">
@@ -38,7 +31,7 @@ const Profile = () => {
                 <Typography variant='h6' textAlign= 'center' gutterBottom>Email: <span>{data.email}</span></Typography>
                 <Typography variant='h6' textAlign= 'center' gutterBottom>Fav Genre: <span>{data.favoriteGenre}</span></Typography>
             </div>
-            <Button variant="outlined" color="error" onClick={handleRemove}>Remove User</Button>
+            <Button variant="outlined" color="error" onClick={handleRemove}>Log out</Button>
             </Paper>
         </div>
     );

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -14,13 +14,19 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { Badge } from '@mui/material';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
 function NavBar() {
-  const user = useSelector(state => state.userInfo.user);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
+
+  const user = useSelector(state => state.userInfo.user);
+  const favCounter = useSelector(state=> state.favourites.counter);
+
+console.log('from navbar: '+favCounter);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -92,11 +98,34 @@ function NavBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button color="inherit" component={Link} to="/movies">Home</Button>
             <Button color="inherit" component={Link} to="/about">About</Button>
-            <Button color="inherit" component={Link} to="/favourites">Favourites</Button>
-            <Button color="inherit" component={Link} to="/signup">Sign Up</Button>
+
+            <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                <Badge badgeContent={favCounter} color="error">
+                    <Button color="inherit" component={Link} to="/favourites">Favourites</Button>
+                </Badge>
+            </Box>
+            
+            {!user.username?<Button color="inherit" component={Link} to="/signup">Sign Up</Button>:null}
+            
             {/* {user && <Button color="inherit" component={Link} to="/profile">Profile</Button>} */}
           </Box>
-
+          
+          <Box sx={{ display: { xs: 'block', md: 'none' }, marginRight:3 }}>
+            <Link className='nav-link' to='/favourites'>
+                <Badge badgeContent={favCounter} color="error">
+                    <FavoriteIcon style={{ color: 'red', fontSize: 25 }} className='my-2'/>
+                </Badge>
+            </Link>
+          </Box>
+         
+         {user.username?
+         <Box>
+         <Tooltip title={user.username}>
+              <IconButton onClick={()=> navigate('/profile')}  sx={{ p: 0 }}>
+                <Avatar alt={user.username[0]} src="/static/images/avatar/2.jpg" />
+              </IconButton>
+            </Tooltip>
+         </Box>:null}
           {/* User Avatar Menu */}
           {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
