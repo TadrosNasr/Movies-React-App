@@ -1,4 +1,5 @@
 # ScreenGems - Movie Website
+![22](https://github.com/user-attachments/assets/0691f562-53ca-4cd2-ab33-38d45024f9f6)
 
 ScreenGems is a modern, responsive movie website that allows users to explore top-rated movies, view detailed information, and manage their favorite films. Built using **React.js** and **Material UI**, it provides a seamless experience across all devices.
 
