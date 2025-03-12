@@ -115,9 +115,9 @@ console.log('from navbar: '+favCounter);
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-          <Link to="/movies" >
-          {<img src='/public/22.png' alt="ScreenGems Logo" style={{ height: 70, marginRight: 10}}/>}        
-        </Link>
+            <Link to="/movies" >
+              <img src='/public/22.png' alt="Logo" style={{ height: 70, marginRight: 10}}/>      
+            </Link>
           </Box>
 
           <Box sx={{ display: { xs: 'block', md: 'none' }, marginRight:3 }}>
