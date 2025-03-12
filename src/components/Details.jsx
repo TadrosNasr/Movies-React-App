@@ -31,10 +31,13 @@ const Details = () => {
 
     return (
         <div>
-            <div style={{marginTop:55, height:'100vh'}} className='container my-5 '>
-                <div className=' d-flex flex-row justify-content-center align-items-center'>
-                    <img className='w-25 h-25 rounded-2 border border-2 border-warning' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-                    <div className='d-flex flex-column justify-content-center align-items-center'>
+            <div style={{marginTop:55, height:'100vh'}} className='container my-5 mx-auto'>
+                
+                <div className=' d-flex flex-md-row flex-column justify-content-center align-items-center'>
+                    <div className='col-9 col-md-5 col-lg-3 d-flex justify-content-center'>
+                        <img className='img-fluid rounded-2 border border-2 border-warning' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                    </div>
+                    <div className='d-flex flex-column justify-content-center align-items-center text-center my-3'>
                         <h1 className='fw-bold text-warning'>{movie.title}</h1>
                         <span className='col-10 my-3 mx-auto '>{movie.overview}</span>
                         <p>Release Date: <span className='text-info'>{movie.release_date}</span></p>

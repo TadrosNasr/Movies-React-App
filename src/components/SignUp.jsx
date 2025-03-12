@@ -34,7 +34,7 @@ const SignUp = () => {
 
   return (
     <div className="d-flex justify-content-center align-items-center col-12 my-5" style={{ height: "100vh" }}>
-      <Paper elevation={3} className="p-4 w-50 mx-auto">
+      <Paper elevation={3} className="p-4 col-11 col-md-7 mx-auto">
         <Typography variant="h4" textAlign="center" gutterBottom>Sign Up</Typography>
 
         <form onSubmit={handleSubmit}>

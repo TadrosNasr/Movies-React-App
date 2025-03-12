@@ -17,11 +17,11 @@ const Favourites = () => {
         </div>
     )}
     return (
-        <div className="container" style={{marginTop:50}}>
+        <div className="container" style={{marginTop:50, height: '100vh'}}>
             <h1 className="my-4 text-center text-warning">Favourite Movies</h1>
             <div className="row">
                 {favouriteMovies.map(movie => (
-                    <div key={movie.id} className="d-flex col-md-3 my-2 gap-2">
+                    <div key={movie.id} className="d-flex col-md-3 my-3 gap-2">
                         <div className="card border border-2 border-warning">
                             <img src={imgPath + movie.poster_path} className="card-img-top" alt={movie.title} />
                             <div className="card-body text-center">
@@ -34,7 +34,7 @@ const Favourites = () => {
                     </div>
                 ))}
             </div>
-            {!user.username && <Link onClick={()=> navigate('/signup')}>Please Login</Link>}
+            {!user.username && <Link onClick={()=> navigate('/signup')}>Please Login to save your favourites</Link>}
 
         </div>
     );

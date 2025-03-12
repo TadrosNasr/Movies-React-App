@@ -48,9 +48,12 @@ console.log('from navbar: '+favCounter);
     <AppBar position="fixed" sx={{ backgroundColor: '#ffb74d',color: '#3c3c3c', width: '100vw' }}> 
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <Link to="/movies">
-          <img src='/public/1.png' alt="ScreenGems Logo" style={{ height: 40, marginRight: 10,display: { xs: 'none', md: 'block' }  }}/>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }}}>
+          <Link to="/movies" >
+          {<img src='/public/1.png' alt="ScreenGems Logo" style={{ height: 40, marginRight: 10}}/>}        
         </Link>
+          </Box>
+        
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
@@ -110,22 +113,11 @@ console.log('from navbar: '+favCounter);
             
             {!user.username?<Button color="inherit" component={Link} to="/signup">Sign Up</Button>:null}
           </Box>
+
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-          <Typography
-            variant="h6"
-            noWrap
-            component={Link}
-            to="/movies"
-            sx={{
-              mr: 2,
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            ScreenGems
-          </Typography>
+          <Link to="/movies" >
+          {<img src='/public/22.png' alt="ScreenGems Logo" style={{ height: 70, marginRight: 10}}/>}        
+        </Link>
           </Box>
 
           <Box sx={{ display: { xs: 'block', md: 'none' }, marginRight:3 }}>
