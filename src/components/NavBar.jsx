@@ -48,7 +48,10 @@ console.log('from navbar: '+favCounter);
     <AppBar position="fixed" sx={{ backgroundColor: '#ffb74d',color: '#3c3c3c', width: '100vw' }}> 
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <Link to="/movies">
+          <img src='/public/1.png' alt="ScreenGems Logo" style={{ height: 40, marginRight: 10,display: { xs: 'none', md: 'block' }  }}/>
+        </Link>
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -63,7 +66,7 @@ console.log('from navbar: '+favCounter);
               textDecoration: 'none',
             }}
           >
-            Movies
+            ScreenGems
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -94,7 +97,7 @@ console.log('from navbar: '+favCounter);
             </Menu>
           </Box>
 
-          {/* Desktop Menu */}
+          {/* Desktop */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button color="inherit" component={Link} to="/movies">Home</Button>
             <Button color="inherit" component={Link} to="/about">About</Button>
@@ -106,10 +109,25 @@ console.log('from navbar: '+favCounter);
             </Box>
             
             {!user.username?<Button color="inherit" component={Link} to="/signup">Sign Up</Button>:null}
-            
-            {/* {user && <Button color="inherit" component={Link} to="/profile">Profile</Button>} */}
           </Box>
-          
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Typography
+            variant="h6"
+            noWrap
+            component={Link}
+            to="/movies"
+            sx={{
+              mr: 2,
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            ScreenGems
+          </Typography>
+          </Box>
+
           <Box sx={{ display: { xs: 'block', md: 'none' }, marginRight:3 }}>
             <Link className='nav-link' to='/favourites'>
                 <Badge badgeContent={favCounter} color="error">
@@ -120,36 +138,13 @@ console.log('from navbar: '+favCounter);
          
          {user.username?
          <Box>
-         <Tooltip title={user.username}>
+            <Tooltip title={user.username}>
               <IconButton onClick={()=> navigate('/profile')}  sx={{ p: 0 }}>
                 <Avatar alt={user.username[0]} src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
          </Box>:null}
-          {/* User Avatar Menu */}
-          {/* <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="User Avatar" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-              keepMounted
-              transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
+
         </Toolbar>
       </Container>
     </AppBar>

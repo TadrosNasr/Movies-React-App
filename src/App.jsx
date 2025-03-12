@@ -31,7 +31,6 @@ const router = createBrowserRouter([
 
   return (
     <>
-    
       {/* <MoviesProvider> */}
         <RouterProvider router={router} />
       {/* </MoviesProvider>*/}
